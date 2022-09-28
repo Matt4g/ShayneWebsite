@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,5 +21,21 @@
         <img src="img/kermit.png">
     </div>
     <br>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBY6aix0gNq5tQLEdbA0bI3H1UQ0BlmoCE",
+            authDomain: "shaynewesbite.firebaseapp.com",
+            databaseURL: "https://shaynewesbite-default-rtdb.firebaseio.com",
+            projectId: "shaynewesbite",
+            storageBucket: "shaynewesbite.appspot.com",
+            messagingSenderId: "588864573963",
+            appId: "1:588864573963:web:1df20e3bf634d87dd52d0e",
+            measurementId: "G-8NC9MRMGQY"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+    </script>
 </body>
 </html>
