@@ -1,11 +1,15 @@
 let input  = document.getElementById('ans');
-let expected = "";
-let riddle
+let expected ;
+let riddle;
+
+db.collection('riddles').get().then((snapshot) => {
+    console.log(snapshot.docs);
+})
 
 //#region Riddle Functions  
 function start(){
     // Set the first riddle
-    riddle = 
+    riddle = "";
 }
 
 function nextRiddle(){

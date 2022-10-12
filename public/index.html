@@ -10,7 +10,7 @@
     <title>Riddle Site</title>
 </head>
 <body> 
-    <script src="js/app.js"></script>
+    
     <div class="fade-in-question">
         bottom text
      </div>
@@ -33,9 +33,10 @@
             appId: "1:588864573963:web:1df20e3bf634d87dd52d0e",
             measurementId: "G-8NC9MRMGQY"
         };
-        firebase.initializeApp(config);
+        firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
