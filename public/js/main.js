@@ -1,16 +1,14 @@
 let input  = document.getElementById('ans');
-let expected ;
-let riddle;
+let expected;
+let riddleDiv = document.getElementById("riddle");
 
-db.collection('riddles').get().then((snapshot) => {
-    console.log(snapshot.docs);
-})
+function start(doc){
+    // Set the first riddle
+    riddleDiv.innerText = doc.data().riddles;
+}
 
 //#region Riddle Functions  
-function start(){
-    // Set the first riddle
-    riddle = "";
-}
+
 
 function nextRiddle(){
 
@@ -20,12 +18,23 @@ function addTime(){
 
 }
 //#endregion
-
+db.collection("riddles").get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        start(doc);
+        expected = doc.data().answers;
+        console.log(doc.data().answers);
+    })
+})
 //#region Riddle if statements
 if(input == expected){
-    nextRiddle();
+    console.log("Correct");
 }
 else{
     addTime();
 }
+
+//#endregion
+
+//#region Call Start function
+start();
 //#endregion

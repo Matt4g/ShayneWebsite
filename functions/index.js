@@ -5,8 +5,8 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 admin.initializeApp();
 
-const serviceAccount = require('./service-account-key.json');
+const serviceAccount = require("./service-account-key.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: `https://${googleCloudProjectId}.firebaseio.com`,
+  databaseURL: "https://${googleCloudProjectId}.firebaseio.com",
 });
