@@ -26,7 +26,8 @@ color: white;
   padding: 15px;
   background-color: rgb(56 56 56);
   border-radius: 8px;
-  width: 300px;
+  width: auto;
+  max-width: 300px;
   }
   
   .fade-in-image{
